@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senha</title>
+    <link rel="stylesheet" href="./public/style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Gerador de Senhas</h1>
+
+        <section class="controls">
+            <div class="field">
+                <label for="length">Tamanho</label>
+                <input type="number" id="length" min="6" max="64" value="12" />
+            </div>
+
+            <div class="grid">
+                <label class="checkbox">
+                    <input type="checkbox" id="useLower" checked />
+                    <span>Minúsculas (a-z)</span>
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" id="useUpper" checked />
+                    <span>Maiúsculas (A-Z)</span>
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" id="useNumbers" checked />
+                    <span>Números (0-9)</span>
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" id="useSymbols" checked />
+                    <span>Símbolos (!@#$%)</span>
+                </label>
+            </div>
+
+            <button id="generateBtn">Gerar Senha</button>
+        </section>
+
+        <section class="result">
+            <div class="output" id="passwordOutput" aria-live="polite">-</div>
+            <div class="actions">
+                <button id="copyBtn">Copiar</button>
+                <span id="copiedNotice" class="notice"></span>
+            </div>
+        </section>
+
+        <section class="strength">
+            <div class="label">Força da Senha:</div>
+            <div class="meter">
+                <div id="meterBar"></div>
+            </div>
+            <div id="meterText" class="meter-text">Aguardando...</div>
+        </section>
+
+         <footer>
+            &copy; <span id="year"></span> Davi Afonso. Todos os direitos reservados.
+         </footer>
+    </main>
+    <script src="./public/app.js"></script>
+</body>
+</html>
